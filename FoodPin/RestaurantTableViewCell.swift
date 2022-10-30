@@ -18,10 +18,12 @@ class RestaurantTableViewCell: UITableViewCell {
             thumbnailImageView.clipsToBounds = true
         }
     }
+    @IBOutlet var heartImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.tintColor = .systemYellow
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
