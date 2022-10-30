@@ -41,6 +41,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06DE95DE290EC8EA007C5EC7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3803D16C290BE3A100D9672A /* RestaurantTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		06DE95DF290EC8F6007C5EC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				06DE95DC290EC432007C5EC7 /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		06DE95E0290EC8FE007C5EC7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				06DE95DA290C1F64007C5EC7 /* RestaurantTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		06DE95E1290EC93F007C5EC7 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3803D15E290BE23800D9672A /* Main.storyboard */,
+				3803D163290BE23900D9672A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		3803D14C290BE23800D9672A = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +93,14 @@
 		3803D157290BE23800D9672A /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				06DE95E1290EC93F007C5EC7 /* Storyboard */,
+				06DE95E0290EC8FE007C5EC7 /* View */,
+				06DE95DF290EC8F6007C5EC7 /* Model */,
+				06DE95DE290EC8EA007C5EC7 /* Controller */,
 				3803D158290BE23800D9672A /* AppDelegate.swift */,
 				3803D15A290BE23800D9672A /* SceneDelegate.swift */,
-				3803D15E290BE23800D9672A /* Main.storyboard */,
 				3803D161290BE23900D9672A /* Assets.xcassets */,
-				3803D163290BE23900D9672A /* LaunchScreen.storyboard */,
 				3803D166290BE23900D9672A /* Info.plist */,
-				3803D16C290BE3A100D9672A /* RestaurantTableViewController.swift */,
-				06DE95DA290C1F64007C5EC7 /* RestaurantTableViewCell.swift */,
-				06DE95DC290EC432007C5EC7 /* Restaurant.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";

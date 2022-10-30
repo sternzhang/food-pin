@@ -39,6 +39,8 @@ class RestaurantTableViewController: UITableViewController {
     
     lazy var dataSource = configureDataSource()
     
+    // MARK: - View controller life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.cellLayoutMarginsFollowReadableWidth = true
@@ -50,6 +52,8 @@ class RestaurantTableViewController: UITableViewController {
         
         dataSource.apply(snapshot, animatingDifferences: false)
     }
+    
+    // MARK: - UITableView Diffable Data Source
     
     func configureDataSource() -> UITableViewDiffableDataSource<Section, Restaurant> {
         let cellIdentifier = "favoritecell"
@@ -68,6 +72,8 @@ class RestaurantTableViewController: UITableViewController {
         )
         return dataSource
     }
+    
+    // MARK: - UITableViewDelegate Protocol
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
