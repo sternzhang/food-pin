@@ -8,10 +8,22 @@
 import UIKit
 
 class RestaurantDetailViewController: UIViewController {
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var headerView: RestaurantDetailHeaderView!
+    
     var restaurant = Restaurant()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        navigationController?.navigationBar.prefersLargeTitles = false
+        
+        //configure header view
+        headerView.nameLabel.text = restaurant.name
+        headerView.typeLabel.text = restaurant.type
+        headerView.headerImageView.image = UIImage(named: restaurant.image)
+        
+        let heartImage = restaurant.isFavorite ? "heart.fill" : "heart"
+        headerView.heartButton.tintColor = restaurant.isFavorite ? .systemYellow : .white
+        headerView.heartButton.setImage(UIImage(systemName: heartImage), for: .normal)
     }
 
     /*
