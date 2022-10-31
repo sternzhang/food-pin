@@ -167,22 +167,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WWW-yG-6LT">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WWW-yG-6LT">
                                 <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kvv-kf-Ti7">
+                                <rect key="frame" x="20" y="111" width="350" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keC-Os-bob">
+                                        <rect key="frame" x="146.66666666666666" y="0.0" width="56.666666666666657" height="33.333333333333336"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbs-o9-yWC">
+                                        <rect key="frame" x="152" y="33.333333333333343" width="46.333333333333343" height="33.333333333333343"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOB-Ra-wzj">
+                                        <rect key="frame" x="134" y="66.666666666666657" width="82" height="33.333333333333343"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="34P-7i-OaZ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GdS-aS-d7J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="GdS-aS-d7J" firstAttribute="trailing" secondItem="WWW-yG-6LT" secondAttribute="trailing" id="4oI-bk-Frn"/>
-                            <constraint firstItem="GdS-aS-d7J" firstAttribute="bottom" secondItem="WWW-yG-6LT" secondAttribute="bottom" id="HHN-Nq-JnC"/>
-                            <constraint firstItem="WWW-yG-6LT" firstAttribute="leading" secondItem="GdS-aS-d7J" secondAttribute="leading" id="cUh-QH-0hJ"/>
-                            <constraint firstItem="WWW-yG-6LT" firstAttribute="top" secondItem="GdS-aS-d7J" secondAttribute="top" id="qQe-bm-xOk"/>
+                            <constraint firstItem="Kvv-kf-Ti7" firstAttribute="top" secondItem="GdS-aS-d7J" secondAttribute="top" constant="20" id="CHw-1O-B8I"/>
+                            <constraint firstItem="Kvv-kf-Ti7" firstAttribute="leading" secondItem="GdS-aS-d7J" secondAttribute="leading" constant="20" id="OIC-1i-JKb"/>
+                            <constraint firstItem="GdS-aS-d7J" firstAttribute="trailing" secondItem="Kvv-kf-Ti7" secondAttribute="trailing" constant="20" id="hff-Xl-hBl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Co2-Ol-nIp"/>
                     <connections>
+                        <outlet property="locationLabel" destination="KOB-Ra-wzj" id="hCN-26-SKk"/>
+                        <outlet property="nameLabel" destination="keC-Os-bob" id="gvx-Vo-9gZ"/>
                         <outlet property="restaurantImageView" destination="WWW-yG-6LT" id="C7T-Wa-hWQ"/>
+                        <outlet property="typeLabel" destination="pbs-o9-yWC" id="ivn-UN-DXc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJi-ai-OQE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
