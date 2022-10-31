@@ -40,6 +40,7 @@ class RestaurantTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.cellLayoutMarginsFollowReadableWidth = true
+        navigationController?.navigationBar.prefersLargeTitles = true
 //        tableView.separatorStyle = .none
         tableView.dataSource = dataSource
         var snapshot = NSDiffableDataSourceSnapshot<Section, Restaurant>()
