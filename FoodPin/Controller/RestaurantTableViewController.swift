@@ -108,6 +108,8 @@ class RestaurantTableViewController: UITableViewController {
             self.dataSource.apply(snapshot, animatingDifferences: true)
             completionHandler(true)
         }
+        deleteAction.backgroundColor = UIColor.systemRed
+        deleteAction.image = UIImage(systemName: "trash")
 //        let shareAction = UIContextualAction(style: .normal, title: "Share"){(action, sourceView, completionHandler) in
 //            let defaultText = "Just checking in at " + restaurant.name
 //            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
@@ -122,9 +124,17 @@ class RestaurantTableViewController: UITableViewController {
             } else {
                 activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
             }
+            if let popoverController = activityController.popoverPresentationController {
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    popoverController.sourceView = cell
+                    popoverController.sourceRect = cell.bounds
+                }
+            }
             self.present(activityController, animated: true, completion: nil)
             completionHandler(true)
         }
+        shareAction.backgroundColor = UIColor.systemOrange
+        shareAction.image = UIImage(systemName: "square.and.arrow.up")
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
         return swipeConfiguration;
     }
