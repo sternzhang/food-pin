@@ -138,5 +138,21 @@ class RestaurantTableViewController: UITableViewController {
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
         return swipeConfiguration;
     }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        guard var restaurant = self.dataSource.itemIdentifier(for: indexPath) else {
+//            return UISwipeActionsConfiguration()
+//        }
+        let favoriteAction = UIContextualAction(style: .destructive, title: "") {(action, sourceView, completionHandler) in
+            let tableCell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
+            tableCell.heartImageView.isHidden = self.restaurants[indexPath.row].isFavorite
+            self.restaurants[indexPath.row].isFavorite = self.restaurants[indexPath.row].isFavorite ? false : true
+            completionHandler(true)
+        }
+        favoriteAction.image = UIImage(systemName: self.restaurants[indexPath.row].isFavorite ? "heart.slash.fill" : "heart.fill")
+        favoriteAction.backgroundColor = UIColor.systemYellow
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [favoriteAction])
+        return swipeConfiguration
+    }
 
 }
