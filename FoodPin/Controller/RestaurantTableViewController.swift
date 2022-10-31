@@ -7,10 +7,6 @@
 
 import UIKit
 
-enum Section {
-    case all
-}
-
 class RestaurantTableViewController: UITableViewController {
     
     var restaurants: [Restaurant] = [
@@ -56,8 +52,8 @@ class RestaurantTableViewController: UITableViewController {
     // MARK: - UITableView Diffable Data Source
     
     func configureDataSource() -> UITableViewDiffableDataSource<Section, Restaurant> {
-        let cellIdentifier = "favoritecell"
-        let dataSource = UITableViewDiffableDataSource<Section, Restaurant>(
+        let cellIdentifier = "datacell"
+        let dataSource = RestaurantDiffableDataSource(
             tableView: tableView, cellProvider: {tableView, indexPath, restaurant in
                 let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
                 cell.nameLabel.text = restaurant.name
