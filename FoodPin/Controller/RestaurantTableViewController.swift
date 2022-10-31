@@ -108,9 +108,20 @@ class RestaurantTableViewController: UITableViewController {
             self.dataSource.apply(snapshot, animatingDifferences: true)
             completionHandler(true)
         }
+//        let shareAction = UIContextualAction(style: .normal, title: "Share"){(action, sourceView, completionHandler) in
+//            let defaultText = "Just checking in at " + restaurant.name
+//            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+//            self.present(activityController, animated: true, completion: nil)
+//            completionHandler(true)
+//        }
         let shareAction = UIContextualAction(style: .normal, title: "Share"){(action, sourceView, completionHandler) in
             let defaultText = "Just checking in at " + restaurant.name
-            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            let activityController: UIActivityViewController
+            if let imageToShare = UIImage(named: restaurant.image) {
+                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+            } else {
+                activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            }
             self.present(activityController, animated: true, completion: nil)
             completionHandler(true)
         }
