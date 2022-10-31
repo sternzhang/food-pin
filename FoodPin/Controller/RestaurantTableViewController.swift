@@ -72,32 +72,32 @@ class RestaurantTableViewController: UITableViewController {
     
     // MARK: - UITableViewDelegate Protocol
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        optionMenu.addAction(cancelAction)
-        
-        let reserveActionHandler = {(action: UIAlertAction!) -> Void in
-            let alertMessage = UIAlertController(title: "Not available yet", message: "Sorry, this feature is not available yet. Please retry later.", preferredStyle: .alert)
-            alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alertMessage, animated: true, completion: nil)
-        }
-        
-        let reserveAction = UIAlertAction(title: "Reserve a table", style: .default, handler: reserveActionHandler)
-        optionMenu.addAction(reserveAction)
-        
-        let favoriteAction = UIAlertAction(title: self.restaurants[indexPath.row].isFavorite ? "Remove from favorite": "Mark as favorite", style: .default, handler: {
-            (action: UIAlertAction!) -> Void in
-            self.restaurants[indexPath.row].isFavorite = !self.restaurants[indexPath.row].isFavorite
-            let cell = tableView.cellForRow(at: indexPath) as? RestaurantTableViewCell
-//            cell?.accessoryType = self.restaurantIsFavorites[indexPath.row] ? .checkmark : .none
-            cell?.heartImageView.isHidden = !self.restaurants[indexPath.row].isFavorite
-            cell?.tintColor = .systemYellow
-        })
-        optionMenu.addAction(favoriteAction)
-        present(optionMenu, animated: true, completion: nil)
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//        optionMenu.addAction(cancelAction)
+//
+//        let reserveActionHandler = {(action: UIAlertAction!) -> Void in
+//            let alertMessage = UIAlertController(title: "Not available yet", message: "Sorry, this feature is not available yet. Please retry later.", preferredStyle: .alert)
+//            alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+//            self.present(alertMessage, animated: true, completion: nil)
+//        }
+//
+//        let reserveAction = UIAlertAction(title: "Reserve a table", style: .default, handler: reserveActionHandler)
+//        optionMenu.addAction(reserveAction)
+//
+//        let favoriteAction = UIAlertAction(title: self.restaurants[indexPath.row].isFavorite ? "Remove from favorite": "Mark as favorite", style: .default, handler: {
+//            (action: UIAlertAction!) -> Void in
+//            self.restaurants[indexPath.row].isFavorite = !self.restaurants[indexPath.row].isFavorite
+//            let cell = tableView.cellForRow(at: indexPath) as? RestaurantTableViewCell
+////            cell?.accessoryType = self.restaurantIsFavorites[indexPath.row] ? .checkmark : .none
+//            cell?.heartImageView.isHidden = !self.restaurants[indexPath.row].isFavorite
+//            cell?.tintColor = .systemYellow
+//        })
+//        optionMenu.addAction(favoriteAction)
+//        present(optionMenu, animated: true, completion: nil)
+//        tableView.deselectRow(at: indexPath, animated: false)
+//    }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         guard let restaurant = self.dataSource.itemIdentifier(for: indexPath) else {
@@ -154,6 +154,15 @@ class RestaurantTableViewController: UITableViewController {
         favoriteAction.backgroundColor = UIColor.systemYellow
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [favoriteAction])
         return swipeConfiguration
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! RestaurantDetailViewController
+                destinationController.restaurantImageName = self.restaurants[indexPath.row].image
+            }
+        }
     }
 
 }
