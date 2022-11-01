@@ -24,6 +24,7 @@ class RestaurantDetailHeaderView: UIView {
             if let customFont = UIFont(name: "Nunito-Bold", size: 20.0) {
                 typeLabel.font = UIFontMetrics(forTextStyle: .headline).scaledFont(for: customFont)
             }
+            typeLabel.numberOfLines = 0
         }
     }
     @IBOutlet var heartButton: UIButton!

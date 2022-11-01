@@ -22,6 +22,8 @@
 		3803D177290FCD0100D9672A /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3803D176290FCD0100D9672A /* Nunito-Bold.ttf */; };
 		3803D179290FD43C00D9672A /* RestaurantDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803D178290FD43C00D9672A /* RestaurantDetailHeaderView.swift */; };
 		3803D17B290FDC4900D9672A /* RestaurantDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803D17A290FDC4900D9672A /* RestaurantDetailTextCell.swift */; };
+		3803D17E2910EC5100D9672A /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803D17D2910EC5100D9672A /* UIColor+Ext.swift */; };
+		3803D1802910F33700D9672A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803D17F2910F33700D9672A /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		3803D176290FCD0100D9672A /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		3803D178290FD43C00D9672A /* RestaurantDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailHeaderView.swift; sourceTree = "<group>"; };
 		3803D17A290FDC4900D9672A /* RestaurantDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTextCell.swift; sourceTree = "<group>"; };
+		3803D17D2910EC5100D9672A /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		3803D17F2910F33700D9672A /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			children = (
 				3803D16C290BE3A100D9672A /* RestaurantTableViewController.swift */,
 				3803D170290FB74F00D9672A /* RestaurantDetailViewController.swift */,
+				3803D17F2910F33700D9672A /* NavigationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 		3803D157290BE23800D9672A /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				3803D17C2910EC3000D9672A /* Extensions */,
 				3803D172290FCC7400D9672A /* Resources */,
 				06DE95E1290EC93F007C5EC7 /* Storyboard */,
 				06DE95E0290EC8FE007C5EC7 /* View */,
@@ -140,6 +146,14 @@
 				3803D174290FCCE400D9672A /* Nunito-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3803D17C2910EC3000D9672A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3803D17D2910EC5100D9672A /* UIColor+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +229,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3803D17B290FDC4900D9672A /* RestaurantDetailTextCell.swift in Sources */,
+				3803D1802910F33700D9672A /* NavigationController.swift in Sources */,
 				06DE95DD290EC432007C5EC7 /* Restaurant.swift in Sources */,
 				06DE95DB290C1F64007C5EC7 /* RestaurantTableViewCell.swift in Sources */,
 				3803D159290BE23800D9672A /* AppDelegate.swift in Sources */,
+				3803D17E2910EC5100D9672A /* UIColor+Ext.swift in Sources */,
 				06DE95E329100573007C5EC7 /* RestaurantDetailTwoColumnCell.swift in Sources */,
 				3803D15B290BE23800D9672A /* SceneDelegate.swift in Sources */,
 				3803D16F290F8E3E00D9672A /* RestaurantDiffableDataSource.swift in Sources */,
