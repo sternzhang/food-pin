@@ -26,6 +26,7 @@
 		3803D17B290FDC4900D9672A /* RestaurantDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803D17A290FDC4900D9672A /* RestaurantDetailTextCell.swift */; };
 		3803D17E2910EC5100D9672A /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803D17D2910EC5100D9672A /* UIColor+Ext.swift */; };
 		3803D1802910F33700D9672A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803D17F2910F33700D9672A /* NavigationController.swift */; };
+		3803D182291257F400D9672A /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3803D181291257F400D9672A /* ReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		3803D17A290FDC4900D9672A /* RestaurantDetailTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTextCell.swift; sourceTree = "<group>"; };
 		3803D17D2910EC5100D9672A /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		3803D17F2910F33700D9672A /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		3803D181291257F400D9672A /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				3803D170290FB74F00D9672A /* RestaurantDetailViewController.swift */,
 				3803D17F2910F33700D9672A /* NavigationController.swift */,
 				06DE95E629115F2C007C5EC7 /* MapViewController.swift */,
+				3803D181291257F400D9672A /* ReviewViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			files = (
 				3803D17B290FDC4900D9672A /* RestaurantDetailTextCell.swift in Sources */,
 				3803D1802910F33700D9672A /* NavigationController.swift in Sources */,
+				3803D182291257F400D9672A /* ReviewViewController.swift in Sources */,
 				06DE95DD290EC432007C5EC7 /* Restaurant.swift in Sources */,
 				06DE95DB290C1F64007C5EC7 /* RestaurantTableViewCell.swift in Sources */,
 				3803D159290BE23800D9672A /* AppDelegate.swift in Sources */,

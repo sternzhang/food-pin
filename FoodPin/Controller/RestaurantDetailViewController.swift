@@ -10,6 +10,9 @@ import UIKit
 class RestaurantDetailViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var headerView: RestaurantDetailHeaderView!
+    @IBAction func close(segue: UIStoryboardSegue) {
+        dismiss(animated: true, completion: nil)
+    }
     
     var restaurant = Restaurant()
     
@@ -45,9 +48,14 @@ class RestaurantDetailViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showMap" {
+        switch segue.identifier {
+        case "showMap":
             let destinationController = segue.destination as! MapViewController
             destinationController.restaurant = restaurant
+        case "showReview":
+            let destinationController = segue.destination as! ReviewViewController
+            destinationController.restaurant = restaurant
+        default: break
         }
     }
 
