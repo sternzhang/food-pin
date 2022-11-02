@@ -182,7 +182,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="361"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFr-2G-Oq9">
-                                                    <rect key="frame" x="345" y="33" width="37" height="31"/>
+                                                    <rect key="frame" x="345" y="13" width="37" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="31" id="0rU-Yf-JRC"/>
                                                         <constraint firstAttribute="width" constant="37" id="5LJ-7d-Kri"/>
@@ -196,10 +196,17 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="cFr-2G-Oq9" firstAttribute="top" secondItem="fq2-Sv-dVh" secondAttribute="topMargin" constant="25" id="CyJ-NK-T3Y"/>
+                                                <constraint firstItem="cFr-2G-Oq9" firstAttribute="top" secondItem="fq2-Sv-dVh" secondAttribute="topMargin" constant="5" id="CyJ-NK-T3Y"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="cFr-2G-Oq9" secondAttribute="trailing" id="uiv-A9-eAb"/>
                                             </constraints>
                                         </view>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jif-Fw-9xU">
+                                            <rect key="frame" x="320" y="373" width="50" height="52"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="52" id="tsC-c9-KFG"/>
+                                                <constraint firstAttribute="width" constant="50" id="ubd-67-wde"/>
+                                            </constraints>
+                                        </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ym5-Lk-7jx">
                                             <rect key="frame" x="20" y="361" width="320" height="64"/>
                                             <subviews>
@@ -227,16 +234,19 @@
                                         <constraint firstItem="fq2-Sv-dVh" firstAttribute="top" secondItem="5S7-Lx-D06" secondAttribute="top" id="Bl8-cS-DAB"/>
                                         <constraint firstItem="fq2-Sv-dVh" firstAttribute="leading" secondItem="5S7-Lx-D06" secondAttribute="leading" id="IWY-Ya-Zui"/>
                                         <constraint firstItem="Ym5-Lk-7jx" firstAttribute="top" secondItem="fq2-Sv-dVh" secondAttribute="bottom" id="V08-q9-ml7"/>
+                                        <constraint firstItem="Ym5-Lk-7jx" firstAttribute="bottom" secondItem="jif-Fw-9xU" secondAttribute="bottom" id="W6c-OV-Hmf"/>
                                         <constraint firstAttribute="trailing" secondItem="8Sq-pq-fTA" secondAttribute="trailing" id="X03-30-CQ2"/>
                                         <constraint firstAttribute="trailing" secondItem="fq2-Sv-dVh" secondAttribute="trailing" id="Yh6-t8-04G"/>
                                         <constraint firstItem="8Sq-pq-fTA" firstAttribute="leading" secondItem="5S7-Lx-D06" secondAttribute="leading" id="Yun-e1-Swe"/>
                                         <constraint firstAttribute="trailing" secondItem="Ym5-Lk-7jx" secondAttribute="trailing" constant="50" id="ZAa-pS-wT3"/>
                                         <constraint firstItem="8Sq-pq-fTA" firstAttribute="top" secondItem="5S7-Lx-D06" secondAttribute="top" id="wab-As-2o4"/>
+                                        <constraint firstAttribute="trailing" secondItem="jif-Fw-9xU" secondAttribute="trailing" constant="20" id="win-f6-Hjk"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="headerImageView" destination="8Sq-pq-fTA" id="a1j-vz-O31"/>
                                         <outlet property="heartButton" destination="cFr-2G-Oq9" id="5oe-Dl-sZn"/>
                                         <outlet property="nameLabel" destination="lHA-h4-qcv" id="eVl-pb-EG9"/>
+                                        <outlet property="ratingImageView" destination="jif-Fw-9xU" id="Ymz-Ia-ubT"/>
                                         <outlet property="typeLabel" destination="uLl-fH-YWJ" id="cIs-es-1CQ"/>
                                     </connections>
                                 </view>
@@ -464,26 +474,41 @@
                                         <rect key="frame" x="0.0" y="0.0" width="156" height="82"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Awesome" image="love"/>
+                                        <connections>
+                                            <segue destination="OYY-ZE-BtL" kind="unwind" identifier="awesome" unwindAction="rateRestaurantWithSegue:" id="LR9-JP-vwv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMU-fR-C37">
                                         <rect key="frame" x="0.0" y="92.000000000000028" width="122" height="83"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Good" image="cool"/>
+                                        <connections>
+                                            <segue destination="OYY-ZE-BtL" kind="unwind" identifier="good" unwindAction="rateRestaurantWithSegue:" id="DtI-NY-7ji"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUh-Vo-6hs">
                                         <rect key="frame" x="0.0" y="185.00000000000003" width="119" height="85.999999999999972"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Okay" image="happy"/>
+                                        <connections>
+                                            <segue destination="OYY-ZE-BtL" kind="unwind" identifier="okay" unwindAction="rateRestaurantWithSegue:" id="E4A-ne-Zf9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gud-ON-Axh">
                                         <rect key="frame" x="0.0" y="281" width="110" height="87"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Bad" image="sad"/>
+                                        <connections>
+                                            <segue destination="OYY-ZE-BtL" kind="unwind" identifier="bad" unwindAction="rateRestaurantWithSegue:" id="8wR-wA-jC4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGK-wR-PTr">
                                         <rect key="frame" x="0.0" y="378" width="139" height="103"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Terrible" image="angry"/>
+                                        <connections>
+                                            <segue destination="OYY-ZE-BtL" kind="unwind" identifier="terrible" unwindAction="rateRestaurantWithSegue:" id="kyN-gk-QV6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -503,6 +528,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="duu-mb-y6z" id="wHd-rm-PKg"/>
+                        <outlet property="closeButton" destination="a2V-c7-5W0" id="EMp-q1-72n"/>
                         <outletCollection property="rateButtons" destination="URU-Eo-kKb" collectionClass="NSMutableArray" id="vTa-Yg-5lD"/>
                         <outletCollection property="rateButtons" destination="qMU-fR-C37" collectionClass="NSMutableArray" id="d5Z-Hd-JPw"/>
                         <outletCollection property="rateButtons" destination="jUh-Vo-6hs" collectionClass="NSMutableArray" id="bo4-Ar-hCg"/>
